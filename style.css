@@ -1,0 +1,103 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #8B1A1A; /* Rojo no tan vivo, más profundo */
+    color: #FFF;
+    margin: 0;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.content-wrapper {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo oscuro suave */
+    padding: 40px;
+    border-radius: 20px;
+    z-index: 10;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: #FFB6C1;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.question {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #FFD700; /* Color oro suave */
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    min-height: 80px;
+}
+
+#siBoton {
+    padding: 15px 30px;
+    background-color: #FF69B4; /* Rosa */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+    z-index: 100;
+}
+
+#noBoton {
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    position: relative;
+    z-index: 50;
+}
+
+/* --- Animación de Corazones --- */
+.heart {
+    position: absolute;
+    background-color: #FFC0CB; /* Rosa suave */
+    transform: rotate(-45deg);
+    animation: float 8s linear infinite;
+    opacity: 0.8;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFC0CB;
+    border-radius: 50%;
+}
+
+.heart::before { top: -50%; left: 0; }
+.heart::after { top: 0; left: 50%; }
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(-45deg) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(-45deg) scale(1.2); opacity: 0; }
+}
